@@ -29,6 +29,15 @@ export function initFiltering(elements, indexes) {
                 state[action.dataset.field] = ""
             }
         };
+        const totalFrom = parseFloat(state.totalFrom) || "";
+        const totalTo = parseFloat(state.totalTo) || "";
+
+        if (totalFrom !== "" || totalTo !== "") {
+            state.total = [totalFrom, totalTo];
+        }
+
+        delete state.totalFrom;
+        delete state.totalTo;
 
         // @todo: #4.5 — отфильтровать данные используя компаратор
         return data.filter(row => compare(row, state));
