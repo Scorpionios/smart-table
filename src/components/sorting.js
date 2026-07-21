@@ -28,6 +28,5 @@ export function initSorting(columns) {
         }
         const sort = (field && order !== 'none') ? `${field}:${order}` : null;
         return sort ? Object.assign({}, query, { sort }) : query;
-        //return sortCollection(data, field, order);
     }
 }

@@ -39,7 +39,6 @@ function collectState() {
  */
 async function render(action) {
     let state = collectState(); // состояние полей из таблицы
-    // let result = [...data]; // копируем для последующего изменения
     let query = {};
     
     // @todo: использование
@@ -95,7 +94,6 @@ async function init() {
     updateIndexes(sampleTable.filter.elements, {
         searchBySeller: indexes.sellers
     });
-    return indexes
 }
 
 init().then(render);
